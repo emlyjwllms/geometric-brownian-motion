@@ -143,17 +143,17 @@ if __name__ == "__main__":
         xh0 = xh[-1]
         
 
-    plt.figure()
+    plt.figure(figsize=(4,6))
     plt.plot(t,x_exact,'k-',linewidth=2,zorder=1,label="Analytical")
     #plt.scatter(tq,xhq,s=5,zorder=2)
     #plt.scatter(t,xh,s=5,zorder=2)
     plt.plot(t,xh,zorder=1,label="DG")
-    plt.xlabel("t")
-    plt.ylabel("x")
+    plt.xlabel(r"$t$")
+    plt.ylabel(r"$x$")
     plt.grid()
     plt.legend()
 
-    #plt.savefig('gbm-dg.png',dpi=300,format='png')
+    plt.savefig('plots/gbm-dg.png',dpi=300,format='png',transparent=True,bbox_inches='tight')
 
 
     plt.show()

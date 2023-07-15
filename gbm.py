@@ -81,19 +81,19 @@ if __name__ == "__main__":
     x_rk = rk(x0,alpha,beta,dW,N,dt)
     x_tay = taylor(x0,alpha,beta,dW,N,dt)
 
-    plt.figure()
+    plt.figure(figsize=(5,6))
     plt.plot(t,x_exact,'k-',linewidth=2,label="Analytical")
     plt.plot(t,x_em,label="Euler-Maruyama")
     plt.plot(t,x_mil,label="Milstein")
     plt.plot(t,x_rk,label="Runge-Kutta")
     plt.plot(t,x_tay,label="Taylor")
 
-    plt.xlabel('$t$')
-    plt.ylabel('$x$')
+    plt.xlabel(r'$t$')
+    plt.ylabel(r'$x$')
     plt.grid('on')
     plt.legend()
 
-    plt.savefig('gbm-real.png',dpi=300,format='png')
+    plt.savefig('plots/gbm-real.png',dpi=300,format='png',transparent=True,bbox_inches='tight')
 
     plt.show()
 
@@ -117,18 +117,18 @@ if __name__ == "__main__":
         x_rk += rk(x0,alpha,beta,dW,N,dt)
         x_tay += taylor(x0,alpha,beta,dW,N,dt)
 
-    plt.figure()
+    plt.figure(figsize=(5,6))
     plt.plot(t,x_exact/mc,'k-',linewidth=2,label="Analytical")
     plt.plot(t,x_em/mc,label="Euler-Maruyama")
     plt.plot(t,x_mil/mc,label="Milstein")
     plt.plot(t,x_rk/mc,label="Runge-Kutta")
     plt.plot(t,x_tay/mc,label="Taylor")
 
-    plt.xlabel('$t$')
-    plt.ylabel('$x$')
+    plt.xlabel(r'$t$')
+    plt.ylabel(r'$x$')
     plt.grid('on')
-    plt.legend()
+    #plt.legend()
 
-    plt.savefig('gbm-mc.png',dpi=300,format='png')
+    plt.savefig('plots/gbm-mc.png',dpi=300,format='png',transparent=True,bbox_inches='tight')
 
     plt.show()

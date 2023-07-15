@@ -111,8 +111,6 @@ if __name__ == "__main__":
 
     mcs = np.array([5,10,50,100,200])
 
-    plt.figure()
-
     mcE = 1000
     x_exacts = np.zeros((mcE,len(t)))
     # monte carlo loop
@@ -126,9 +124,7 @@ if __name__ == "__main__":
 
     E_x_exact = np.mean(x_exacts,0)
 
-
-    plt.plot(t,E_x_exact,'k-',linewidth=2,zorder=1,label="Analytical, MC = 1000")
-
+    E_xhs = np.empty((len(mcs),len(t)))
 
     for mci in range(len(mcs)):
 
@@ -173,18 +169,8 @@ if __name__ == "__main__":
                 xh0 = xh[-1]
             xhs[i,:] = xh
             
-        E_xh = np.mean(xhs,0)
+        E_xhs[mci] = np.mean(xhs,0)
 
-        #plt.scatter(tq,xhq,s=5,zorder=2)
-        #plt.scatter(t,xh,s=5,zorder=2)
-        plt.plot(t,E_xh,zorder=2,label="DG, MC = " + str(mc))
-        plt.xlabel("t")
-        plt.ylabel("x")
-        plt.grid()
-        plt.legend()
-
-
-    #plt.savefig('gbm-dg-mc.png',dpi=300,format='png')
-    plt.show()
+    np.savez('gbm_dg_mc', t=t, E_xhs=E_xhs, E_x_exact=E_x_exact, mcs=mcs )
 
 

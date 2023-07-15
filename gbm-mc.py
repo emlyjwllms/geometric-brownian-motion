@@ -27,6 +27,8 @@ if __name__ == "__main__":
     mc = 100
 
     E_x_exact = np.zeros((mc,len(t)))
+
+    plt.figure(figsize=(6,4))
     # monte carlo loop
     for i in range(mc):
         np.random.seed(i)
@@ -36,13 +38,13 @@ if __name__ == "__main__":
         E_x_exact[i,:] = x_exact
         plt.plot(t,x_exact,'-')
 
-    plt.plot(t,np.mean(E_x_exact,0),'k--',linewidth=2)
+    plt.plot(t,np.mean(E_x_exact,0),'k--',linewidth=3)
 
-    plt.xlabel('$t$')
-    plt.ylabel('$x$')
+    plt.xlabel(r'$t$')
+    plt.ylabel(r'$x$')
     plt.grid('on')
 
-    plt.savefig('exact_reals.png',dpi=300,format='png')
+    plt.savefig('plots/exact_reals.png',dpi=300,format='png',transparent=True,bbox_inches='tight')
 
     plt.show()
 

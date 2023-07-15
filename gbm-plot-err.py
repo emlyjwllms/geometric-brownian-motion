@@ -49,6 +49,6 @@ plt.ylim(10**(-6),5)
 plt.xlabel(r'$\Delta t$')
 plt.ylabel(r'$e$')
 
-plt.savefig('gbm-err.png',dpi=300,format='png')
+plt.savefig('plots/gbm-err.png',dpi=300,format='png',transparent=True,bbox_inches='tight')
 
 plt.show()
