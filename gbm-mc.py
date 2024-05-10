@@ -44,7 +44,7 @@ if __name__ == "__main__":
     plt.ylabel(r'$x$')
     plt.grid('on')
 
-    plt.savefig('plots/exact_reals.png',dpi=300,format='png',transparent=True,bbox_inches='tight')
+    #plt.savefig('plots/exact_reals.png',dpi=300,format='png',transparent=True,bbox_inches='tight')
 
     plt.show()
 

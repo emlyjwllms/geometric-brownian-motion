@@ -93,7 +93,7 @@ if __name__ == "__main__":
     plt.grid('on')
     plt.legend()
 
-    plt.savefig('plots/gbm-real.png',dpi=300,format='png',transparent=True,bbox_inches='tight')
+    #plt.savefig('plots/gbm-real.png',dpi=300,format='png',transparent=True,bbox_inches='tight')
 
     plt.show()
 
@@ -129,6 +129,6 @@ if __name__ == "__main__":
     plt.grid('on')
     #plt.legend()
 
-    plt.savefig('plots/gbm-mc.png',dpi=300,format='png',transparent=True,bbox_inches='tight')
+    #plt.savefig('plots/gbm-mc.png',dpi=300,format='png',transparent=True,bbox_inches='tight')
 
     plt.show()

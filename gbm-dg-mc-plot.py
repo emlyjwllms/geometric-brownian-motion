@@ -11,7 +11,7 @@ import scipy
 from scipy.special import jacobi
 
 
-gbm_dg_mc = np.load('gbm_dg_mc.npz')
+gbm_dg_mc = np.load('data/gbm_dg_mc.npz')
 t = gbm_dg_mc['t']
 E_x_exact = gbm_dg_mc['E_x_exact']
 E_xhs = gbm_dg_mc['E_xhs']
@@ -31,5 +31,5 @@ plt.ylabel(r"$x$")
 plt.grid()
 #plt.legend()
 
-plt.savefig('plots/gbm-dg-mc.png',dpi=300,format='png',transparent=True,bbox_inches='tight')
+# plt.savefig('plots/gbm-dg-mc.png',dpi=300,format='png',transparent=True,bbox_inches='tight')
 plt.show()
